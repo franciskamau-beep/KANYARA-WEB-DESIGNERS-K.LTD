@@ -11,7 +11,17 @@
   <meta http-equiv="cookie" content="expires 08-10-2026 23:59:59 GMT" />
   <title>Hotlines & Links — KANYARA $ WEB-DESIGNERS K.LTD</title>
   <link rel="stylesheet" href="style.css" >
-  <script defer src="script.js"></script>
+  <script defer src="script.js"></script><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9PZ72EYJ10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9PZ72EYJ10');
+</script>
+
+
 </head>
 <body>
   <header class="site-header">
@@ -43,6 +53,41 @@
       <p>Main contact: <a href="mailto:franciskamauzed@gmail.com">franciskamauzed@gmail.com</a></p>
       <p>Collaborator: <a href="mailto:mercynjiru565@gmail.com">mercynjiru565@gmail.com</a></p>
     </section>
+    <h2>Contact Us</h2>
+<p>We’d love to hear from you! Fill out the form below to get in touch.</p>
+
+<form action="https://formspree.io/f/xpwykbaz" method="post">
+  <label for="name">Full Name:</label><br>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email Address:</label><br>
+  <input type="email" id="email" name="_replyto" required><br><br>
+
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+  <button type="submit">Send Message</button>
+</form>
+<script>
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      alert("Message sent successfully! Thank you.");
+      form.reset(); // ✅ clears all input fields
+    } else {
+      alert("Oops! There was a problem sending your message.");
+    }
+  });
+</script>
+
+
 
     <footer class="site-footer">
       <p>© <span id="year-5"></span> KANYARA $ WEB-DESIGNERS K.LTD</p>
